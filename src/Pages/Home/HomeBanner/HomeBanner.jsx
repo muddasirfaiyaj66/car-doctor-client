@@ -12,19 +12,19 @@ const HomeBanner = () => {
         <div id="slide1" className="carousel-item relative w-full h-[600px]">
           <img src={img1} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 space-y-7">
-              <h1 className="text-5xl font-bold">
+            <div className="text-white ml-12 lg:space-y-7 space-y-3 ">
+              <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
               <p>
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="flex gap-5">
-                <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
+              <div className="lg:flex space-y-3  gap-5">
+                <button className="btn  hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
-                <button className="btn btn-outline border-white text-white ">
+                <button className="btn  btn-outline border-white text-white ">
                   Latest Project
                 </button>
               </div>
@@ -42,15 +42,15 @@ const HomeBanner = () => {
         <div id="slide2" className="carousel-item relative w-full h-[600px]">
           <img src={img2} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 space-y-7">
-              <h1 className="text-5xl font-bold">
+            <div className="text-white ml-12 lg:space-y-7 space-y-3">
+              <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
               <p>
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="flex gap-5">
+              <div className="lg:flex space-y-3 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -72,15 +72,15 @@ const HomeBanner = () => {
         <div id="slide3" className="carousel-item relative w-full h-[600px]">
           <img src={img3} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 space-y-7">
-              <h1 className="text-5xl font-bold">
+            <div className="text-white ml-12 lg:space-y-7 space-y-3">
+              <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
               <p>
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="flex gap-5">
+              <div className="lg:flex space-y-3 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -102,15 +102,15 @@ const HomeBanner = () => {
         <div id="slide4" className="carousel-item relative w-full h-[600px]">
           <img src={img4} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 space-y-7">
-              <h1 className="text-5xl font-bold">
+            <div className="text-white ml-12 lg:space-y-7 space-y-3">
+              <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
               <p>
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="flex gap-5">
+              <div className="lg:flex space-y-3 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -132,15 +132,15 @@ const HomeBanner = () => {
         <div id="slide5" className="carousel-item relative w-full h-[600px]">
           <img src={img5} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 space-y-7">
-              <h1 className="text-5xl font-bold">
+            <div className="text-white ml-12 lg:space-y-7 space-y-3">
+              <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
               <p>
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="flex gap-5">
+              <div className="lg:flex space-y-3 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -162,15 +162,15 @@ const HomeBanner = () => {
         <div id="slide6" className="carousel-item relative w-full h-[600px]">
           <img src={img6} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 space-y-7">
-              <h1 className="text-5xl font-bold">
+            <div className="text-white ml-12 lg:space-y-7 space-y-3">
+              <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
               <p>
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="flex gap-5">
+              <div className="lg:flex space-y-3 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
