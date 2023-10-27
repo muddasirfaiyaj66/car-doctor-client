@@ -58,7 +58,7 @@ const SignUp = () => {
         <button> <img src="/src/assets/icons/google.svg" className="rounded-full w-[55px] h-[55px] btn  btn-sm" alt="" /></button>
         
     </div>
-    <h3 className="font-medium text-center mt-4 mb-10 text-[#737373]">Already have an account? <span className="text-[#FF3811]"><Link to='/signin'>Sign In</Link></span></h3>
+    <h3 className="font-medium text-center mt-4 mb-10 text-[#737373]">Already have an account? <span className="text-[#FF3811]"><Link to='/login'>Sign In</Link></span></h3>
   </div>
 </div>
 </div>
