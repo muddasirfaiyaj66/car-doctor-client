@@ -20,7 +20,7 @@ const HomeBanner = () => {
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="lg:flex space-y-3  gap-5">
+              <div className="lg:flex space-y-3 lg:space-y-0 gap-5">
                 <button className="btn  hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -50,7 +50,7 @@ const HomeBanner = () => {
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="lg:flex space-y-3 gap-5">
+              <div className="lg:flex space-y-3 lg:space-y-0 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -80,7 +80,7 @@ const HomeBanner = () => {
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="lg:flex space-y-3 gap-5">
+              <div className="lg:flex space-y-3 lg:space-y-0 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -110,7 +110,7 @@ const HomeBanner = () => {
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="lg:flex space-y-3 gap-5">
+              <div className="lg:flex space-y-3 lg:space-y-0 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -140,7 +140,7 @@ const HomeBanner = () => {
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="lg:flex space-y-3 gap-5">
+              <div className="lg:flex space-y-3 lg:space-y-0 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>
@@ -170,7 +170,7 @@ const HomeBanner = () => {
                 There are many variations of passages of available, but the
                 majority have suffered alteration in some form
               </p>
-              <div className="lg:flex space-y-3 gap-5">
+              <div className="lg:flex space-y-3 lg:space-y-0 gap-5">
                 <button className="btn hover:bg-[#e74525] bg-[#FF3811] text-white">
                   Discover More
                 </button>

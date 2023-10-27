@@ -27,6 +27,10 @@ const Services = () => {
                 }
 
             </div>
+
+            <div className="text-center">
+                <button className=" btn btn-outline border-[#FF3811] text-[#FF3811] font-bold ">More Services</button>
+            </div>
         </div>
     );
 };
