@@ -3,6 +3,7 @@ import checkout from "../../assets/images/checkout/checkout.png";
 import vector from "../../assets/images/checkout/Vector.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
     const service =  useLoaderData();
@@ -38,7 +39,14 @@ const Checkout = () => {
         })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
+          if(data.insertedId){
+            Swal.fire({
+              icon: 'success',
+              title: 'congrats',
+              text: 'Successfully Booked ',
+              
+            })
+          }
         })
     }
     return (

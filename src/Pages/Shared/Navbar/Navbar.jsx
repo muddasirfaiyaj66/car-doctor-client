@@ -1,7 +1,24 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
+  const {logOut,user} = useContext(AuthContext);
+  const handleLogOut = ()=>{
+    logOut()
+    .then(()=>{
+      Swal.fire({
+        icon: 'success',
+        title: 'See you again🥹',
+        text: 'Successfully Log Out ',})
+      
+     
+
+    })
+    .catch(error => console.log(error.message))
+  }
 
     const navlinks = <>
      <li> <NavLink to='/' className={({ isActive, isPending }) =>
@@ -19,6 +36,12 @@ const Navbar = () => {
      <li> <NavLink to='/contact' className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "bg-[#00BA9C]  text-white " : ""
   }>Contact</NavLink></li>
+
+  {
+    user ? <button className="btn btn-warning bg-red-600 text-white" onClick={handleLogOut}>Log Out</button> :  <li> <NavLink to='/login' className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-[#00BA9C]  text-white " : ""
+  }>Log In</NavLink></li>
+  }
     
     </>
     return (
