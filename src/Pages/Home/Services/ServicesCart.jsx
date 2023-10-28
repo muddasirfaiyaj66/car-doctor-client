@@ -1,4 +1,5 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const ServicesCart = ({ serData }) => {
   const { _id, title, img, price } = serData;
   return (
@@ -14,7 +15,7 @@ const ServicesCart = ({ serData }) => {
                 <p>Price: ${price}</p>
             </div>
             <div>
-                <AiOutlineArrowRight/>
+                <Link to={`/serviceDetails/${_id}`}><AiOutlineArrowRight/></Link>
             </div>
            </div>
         </div>
