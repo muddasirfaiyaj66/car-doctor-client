@@ -12,7 +12,7 @@ const HomeBanner = () => {
         <div id="slide1" className="carousel-item relative w-full h-[600px]">
           <img src={img1} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 lg:space-y-7 space-y-3 ">
+            <div className="text-white ml-12 lg:space-y-7  space-y-3 ">
               <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
@@ -72,7 +72,7 @@ const HomeBanner = () => {
         <div id="slide3" className="carousel-item relative w-full h-[600px]">
           <img src={img3} className="w-full rounded-xl" />
           <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]   w-1/2 h-full">
-            <div className="text-white ml-12 lg:space-y-7 space-y-3">
+            <div className="text-white  ml-12 lg:space-y-7 space-y-3">
               <h1 className="lg:text-5xl text-2xl font-bold">
                 Affordable <br /> Price For Car <br /> Servicing
               </h1>
