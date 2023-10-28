@@ -1,20 +1,45 @@
 import { useLoaderData } from "react-router-dom";
 import checkout from "../../assets/images/checkout/checkout.png";
 import vector from "../../assets/images/checkout/Vector.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+
 const Checkout = () => {
     const service =  useLoaderData();
-    const {title} =service;
+    const {title, _id, price, img } =service;
+    const {user} = useContext(AuthContext);
+    console.log(user);
     const handleOrderConfirm = event =>{
         event.preventDefault();
         const form = event.target;
-        const first_name = form.first_name.value;
-        const last_name = form.last_name.value;
+        const name = form.name.value;
+        const date = form.date.value;
         const email = form.email.value;
         const phone = form.phone.value;
         const message = form.message.value;
 
-        const checkOutData = {first_name,last_name,phone,email,message};
-        console.log(checkOutData);
+        const bookingData = {customerName: name,
+          date,
+          phone,
+          email,
+          message,
+          img,
+          service:title, 
+          service_id: _id,
+           price
+          };
+        console.log(bookingData);
+        fetch('http://localhost:5000/bookings', {
+          method:'POST',
+          headers:{
+            'content-type': 'application/json'
+          },
+          body:JSON.stringify(bookingData)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+        })
     }
     return (
         <div>
@@ -46,15 +71,16 @@ const Checkout = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="form-control">
           <label className="label">
-            <span className="label-text">First Name</span>
+            <span className="label-text">Name</span>
           </label>
-          <input type="text" placeholder="First Name" name='first_name' className="input input-bordered" required />
+          <input type="text" defaultValue={user?.displayName? user.displayName : ''
+} placeholder="Name" name='name' className="input input-bordered" required />
         </div>
             <div className="form-control">
           <label className="label">
-            <span className="label-text">Last Name</span>
+            <span className="label-text">Date</span>
           </label>
-          <input type="text" placeholder="Last Name" name='last_name' className="input input-bordered" required />
+          <input type="date"  name='date' className="input input-bordered" required />
         </div>
             <div className="form-control">
           <label className="label">
@@ -66,7 +92,7 @@ const Checkout = () => {
           <label className="label">
             <span className="label-text">Your Email</span>
           </label>
-          <input type="email" placeholder="Your Email" name='email' className="input input-bordered" required />
+          <input type="email" defaultValue={user?.email} placeholder="Your Email" name='email' className="input input-bordered" required />
         </div>
 
             </div>
