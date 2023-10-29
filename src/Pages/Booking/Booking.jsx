@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import checkout from "../../assets/images/checkout/checkout.png";
-import vector from "../../assets/images/checkout/Vector.png";
+
 import { AuthContext } from "../../Providers/AuthProvider";
 import BookingTableRow from "./BookingTableRow";
 import Swal from "sweetalert2";
@@ -12,7 +12,7 @@ const Booking = () => {
         fetch(url)
         .then(res=> res.json())
         .then(data => setBookings(data))
-    },[]);
+    },[url]);
     const handleDelete = id =>{
       Swal.fire({
           title: 'Are you sure?',
@@ -45,28 +45,56 @@ const Booking = () => {
           }
         })
      }
+     const handleBookingConfirm = id =>{
+      fetch(`http://localhost:5000/bookings/${id}`, {
+        method:'PATCH',
+        headers:{
+          'content-type': "application/json"
+        },
+        body: JSON.stringify({status: 'confirm'})
+      } )
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data)
+        if(data.modifiedCount > 0){
+          
+          const remaining = bookings.filter(booking => booking._id !== id)
+          const updated = bookings.find(booking => booking._id === id)
+          updated.status = 'confirm'
+          const newBookings = [updated, ...remaining];
+          setBookings(newBookings);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your booking data has been edited',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+        }
+      })
+    }
+
+
+     
     return (
         <div>
             
                   {/* Booking card design */}
       <div className="max-w-screen-xl mx-auto relative my-10">
         <img src={checkout} alt="" />
-        <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)] top-0   w-1/2 h-full">
+        <div className="absolute flex items-center rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)] top-0   h-full">
           
-          <div >
-          <h1 className="ml-8  -mt-5 lg:mt-0 text-white font-bold lg:text-3xl">
+          <div className="ml-8  -mt-5 lg:mt-0 text-center">
+          <h1 className=" text-white font-bold lg:text-3xl">
           Cart Details
           </h1>
-          <p className="text-[#FF3811]  ml-8 -mt-5 lg:mt-0 ">
+          <p className="text-[#FF3811] w-full font-medium   ">
           Home - Product Details
           </p>
           </div>
         </div>
-        <div className="text-center flex justify-center items-center ">
-          <img src={vector} alt="" className="absolute mb-12 " />
-
-          
-        </div>
+        
       </div>
       {/* Booking card design End  */}
 
@@ -93,7 +121,7 @@ const Booking = () => {
     </thead>
     <tbody>
       {
-        bookings.map(booking => <BookingTableRow key={booking._id} handleDelete={handleDelete} booking={booking}></BookingTableRow>)
+        bookings.map(booking => <BookingTableRow key={booking._id} handleDelete={handleDelete} booking={booking} handleBookingConfirm={handleBookingConfirm}></BookingTableRow>)
       }
       
      

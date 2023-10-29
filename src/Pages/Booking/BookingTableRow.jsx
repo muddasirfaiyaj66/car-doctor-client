@@ -1,9 +1,9 @@
-import Swal from "sweetalert2";
 
 
-const BookingTableRow = ({booking,handleDelete}) => {
+
+const BookingTableRow = ({booking,handleDelete,handleBookingConfirm}) => {
     const {_id, img, title,customerName,date,message
-,        service,phone,price
+,        service,phone,price, status
 
     } = booking;
 
@@ -44,7 +44,12 @@ const BookingTableRow = ({booking,handleDelete}) => {
           <button className="btn btn-ghost btn-xs">{price}</button>
         </th>
         <td>
-            <li className="bg-[#FF3811] text-white btn rounded-lg">Pending</li>
+            {
+                status === 'confirm' ?<li  className="bg-[#FF3811] text-white btn rounded-lg">Confirm</li>  :
+                <li onClick={()=>handleBookingConfirm(_id)} className="bg-[#1cc796] text-white btn rounded-lg">Pending</li>
+                
+                
+            }
         </td>
       </tr>
         
