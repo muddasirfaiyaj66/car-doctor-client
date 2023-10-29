@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import checkout from "../../assets/images/checkout/checkout.png";
 import vector from "../../assets/images/checkout/Vector.png";
 import { AuthContext } from "../../Providers/AuthProvider";
+import BookingTableRow from "./BookingTableRow";
+import Swal from "sweetalert2";
 const Booking = () => {
     const {user}= useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
@@ -10,7 +12,39 @@ const Booking = () => {
         fetch(url)
         .then(res=> res.json())
         .then(data => setBookings(data))
-    },[])
+    },[]);
+    const handleDelete = id =>{
+      Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+  
+              fetch(`http://localhost:5000/bookings/${id}`, {
+                  method:'DELETE',
+              })
+              .then(res=> res.json())
+              .then(data=> {
+                  if(data.deletedCount > 0){
+                      Swal.fire(
+                          'Deleted!',
+                          'Your file has been deleted.',
+                          'success'
+                        )
+
+                        const remaining = bookings.filter(booking => booking._id !== id )
+                        setBookings(remaining)
+                  }
+              })
+           
+          }
+        })
+     }
     return (
         <div>
             
@@ -39,6 +73,38 @@ const Booking = () => {
       <h1 className="text-center font-bold text-3xl my-5">
         Your Bookings: {bookings.length}
       </h1>
+      {/* Table  */}
+
+      <div className="overflow-x-auto">
+  <table className="table">
+    {/* head */}
+    <thead>
+      <tr>
+        <th>
+         
+        </th>
+        <th></th>
+        <th>Customer Information</th>
+        <th>Service</th>
+        <th>Booking Date</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        bookings.map(booking => <BookingTableRow key={booking._id} handleDelete={handleDelete} booking={booking}></BookingTableRow>)
+      }
+      
+     
+     
+     
+    </tbody>
+    
+   
+    
+  </table>
+</div>
         </div>
     );
 };
